@@ -63,17 +63,18 @@ def getData():
     studioList = []
     yearList = []
 
-    
+    count = 0
     for line in dataFile:
         
-        line = line.strip()
-        title, genre, runTime, rating, studio, year = line.split(",")
-        titleList.append(title)
-        genreList.append(genre)
-        runTimeList.append(runTime)
-        ratingList.append(rating)
-        studioList.append(studio)
-        yearList.append(year)
+        temp = line.split(",")
+        count += 1
+        if (len(temp) == 6):
+            titleList.append(temp[0])
+            genreList.append(temp[1])
+            runTimeList.append(temp[2])
+            ratingList.append(temp[3])
+            studioList.append(temp[4])
+            yearList.append(temp[5])
 
     dataFile.close()
 
@@ -198,3 +199,6 @@ def main():
             print("Error in your choice")
             choice = getChoice()
     print("Good-bye")
+
+
+main()
