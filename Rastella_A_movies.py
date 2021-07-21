@@ -145,7 +145,10 @@ def filmsInRange_and_Rating(rating, yearOne, yearTwo, titleList, genreList, runT
 
 def film_by_Title(titleName, titleList, genreList, runTimeList, ratingList, studioList, yearList):
     # This function displays all information about the film with a specific title.
-
+    for i in range(len(titleList)):
+        if (titleName == titleList[i]):
+            break
+    print(f"{titleList[i]},{genreList[i]},{runTimeList[i]},{ratingList[i]},{studioList[i]},{yearList[i]}")
     return
 
 def averageRuntime_by_Rating(ratingChoice, ratingList, runTimeList):
@@ -218,7 +221,13 @@ def main():
            
             choice = getChoice()
         elif choice == 4:
-        
+            while True:
+                try:
+                    titleName = input("Enter Title")
+                    break
+                except:
+                    print("That Title cannot be found. Please try again.")
+            film_by_Title(titleName, titleList, genreList, runTimeList, ratingList, studioList, yearList)
             choice = getChoice()
         elif choice == 5:
            
