@@ -34,6 +34,8 @@
 
 # Function Design:
 # ----------------
+import genre as genre
+
 
 def openFile():
     # This function will be the exception handling for inputting the data
@@ -106,8 +108,33 @@ def longestFilm_by_Genre(genreName, titleList, genreList, runTimeList, ratingLis
     # This function will take seven parameters and will return
     # the information of the longest film in a specific genre that will
     # be inputted by the user
-    
-    return 
+    genre = []
+    title = []
+    runtime = []
+    rating = []
+    studio = []
+    year = []
+    for x in range(len(genreList)):
+
+        if genreName == genreList[x]:
+            genre.append(genreList[x])
+            title.append(titleList[x])
+            runtime.append(runTimeList[x])
+            rating.append(ratingList[x])
+            studio.append(studioList[x])
+            year.append(yearList[x])
+    n = len(runtime)
+    for i in range(n):
+        for j in range(n-i-1):
+            if (runtime[j]>runtime[j+1]):
+                genre[j],genre[j+1] = genre[j+1],genre[j]
+                title[j],title[j+1] = title[j+1],title[j]
+                runtime[j],runtime[j+1] = runtime[j+1],runtime[j]
+                rating[j],rating[j+1] = rating[j+1],rating[j]
+                studio[j],studio[j+1] = studio[j+1],studio[j]
+                year[j],year[j+1] = year[j+1],year[j]
+    print(f"{genre[0]},{title[0]},{runtime[0]},{rating[0]},{studio[0]},{year[0]}")
+    return
 
 def filmsInRange_and_Rating(rating, yearOne, yearTwo, titleList, genreList, runTimeList, ratingList, studioList, yearList):    
     # This option displays all information about films with a chosen
@@ -178,7 +205,14 @@ def main():
             choice = getChoice()
             
         elif choice == 2:
-       
+            while(True):
+                try:
+                    genreName = input("Enter genre: ")
+                    break
+                except:
+                    print("That genre cannot be found. Please try again.")
+
+            longestFilm_by_Genre(genreName, titleList, genreList, runTimeList, ratingList, studioList, yearList)
             choice = getChoice()
         elif choice == 3:
            
