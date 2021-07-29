@@ -1,7 +1,7 @@
 # Name:        Amber Rastella
 # Class:       CSC 110 - Summer 2021
-# Assignment:  Programming Project Design
-# Due Date:    July 11, 2021
+# Assignment:  Programming Project Implementation
+# Due Date:    July 30, 2021
 
 # Program Title:  Movies Data
   
@@ -34,7 +34,6 @@
 
 # Function Design:
 # ----------------
-import genre as genre
 
 
 def openFile():
@@ -108,6 +107,7 @@ def longestFilm_by_Genre(genreName, titleList, genreList, runTimeList, ratingLis
     # This function will take seven parameters and will return
     # the information of the longest film in a specific genre that will
     # be inputted by the user
+    
     genre = []
     title = []
     runtime = []
@@ -123,6 +123,7 @@ def longestFilm_by_Genre(genreName, titleList, genreList, runTimeList, ratingLis
             rating.append(ratingList[x])
             studio.append(studioList[x])
             year.append(yearList[x])
+            
     n = len(runtime)
     for i in range(n):
         for j in range(n-i-1):
@@ -163,8 +164,11 @@ def sort_by_year(titleList, genreList, runTimeList, ratingList, studioList, year
 
     return
 
-def mostFilmsProduced_by_Studio():
+def mostFilmsProduced_by_Studio(titleList, studioList):
     # This function will find the studio that has produced the most films.
+  
+    
+    
 
     return
 
