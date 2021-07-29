@@ -134,13 +134,40 @@ def longestFilm_by_Genre(genreName, titleList, genreList, runTimeList, ratingLis
                 rating[j],rating[j+1] = rating[j+1],rating[j]
                 studio[j],studio[j+1] = studio[j+1],studio[j]
                 year[j],year[j+1] = year[j+1],year[j]
-    print(f"{genre[0]},{title[0]},{runtime[0]},{rating[0]},{studio[0]},{year[0]}")
+    print(genre[0]})
+    print(title[0])
+    print(runtime[0])
+    print(rating[0])
+    print(studio[0])
+    print(year[0])
     return
 
 def filmsInRange_and_Rating(rating, yearOne, yearTwo, titleList, genreList, runTimeList, ratingList, studioList, yearList):    
     # This option displays all information about films with a chosen
     # rating that were produced within a range of years chosen by the user.
+    genre = []
+    title = []
+    runtime = []
+    rating = []
+    studio = []
+    year = []
+    for x in range(len(ratingList)):
 
+        if rating == ratingList[x] and (yearOne<=  yearList[x] and  yearList[x] <= yearTwo) :
+          
+            genre.append(genreList[x])
+            title.append(titleList[x])
+            runtime.append(runTimeList[x])
+            rating.append(ratingList[x])
+            studio.append(studioList[x])
+            year.append(yearList[x])
+    print(genre[0]})
+    print(title[0])
+    print(runtime[0])
+    print(rating[0])
+    print(studio[0])
+    print(year[0])
+    return
     return
 
 
