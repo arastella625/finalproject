@@ -146,26 +146,19 @@ def filmsInRange_and_Rating(rating, yearOne, yearTwo, titleList, genreList, runT
     genre = []
     title = []
     runtime = []
-    rating = []
+    ratings = []
     studio = []
     year = []
     for x in range(len(ratingList)):
-
-        if rating == ratingList[x] and (yearOne<=  yearList[x] and  yearList[x] <= yearTwo) :
-          
-            genre.append(genreList[x])
-            title.append(titleList[x])
-            runtime.append(runTimeList[x])
-            rating.append(ratingList[x])
-            studio.append(studioList[x])
-            year.append(yearList[x])
-    print(genre[0])
-    print(title[0])
-    print(runtime[0])
-    print(rating[0])
-    print(studio[0])
-    print(year[0])
-    return
+        if(rating ==ratingList[x]):
+            if (yearOne<=yearList[x]):
+                if(yearTwo>=yearList[x]):
+                    print(genreList[x])
+                    print(titleList[x])
+                    print(runTimeList[x])
+                    print(ratingList[x])
+                    print(studioList[x])
+                    print(yearList[x])
     return
 
 
@@ -239,25 +232,20 @@ def main():
             choice = getChoice()
             
         elif choice == 2:
-            while(True):
-                try:
-                    genreName = input("Enter genre: ")
-                    break
-                except:
-                    print("That genre cannot be found. Please try again.")
+            genreName = input("Enter genre: ")
 
             longestFilm_by_Genre(genreName, titleList, genreList, runTimeList, ratingList, studioList, yearList)
             choice = getChoice()
         elif choice == 3:
-           
+            rating = input("what is the rating")
+            yearOne = input("enter first year")
+            yearTwo = input("enter the second year")
+            filmsInRange_and_Rating(rating, yearOne, yearTwo, titleList, genreList, runTimeList, ratingList, studioList,
+                                    yearList)
             choice = getChoice()
         elif choice == 4:
-            while True:
-                try:
-                    titleName = input("Enter Title")
-                    break
-                except:
-                    print("That Title cannot be found. Please try again.")
+
+            titleName = input("Enter Title")
             film_by_Title(titleName, titleList, genreList, runTimeList, ratingList, studioList, yearList)
             choice = getChoice()
         elif choice == 5:
