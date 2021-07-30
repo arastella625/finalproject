@@ -132,7 +132,7 @@ def longestFilm_by_Genre(genreName, titleList, genreList, runTimeList, ratingLis
                 rating[j],rating[j+1] = rating[j+1],rating[j]
                 studio[j],studio[j+1] = studio[j+1],studio[j]
                 year[j],year[j+1] = year[j+1],year[j]
-    print(genre[0]})
+    print(genre[0])
     print(title[0])
     print(runtime[0])
     print(rating[0])
@@ -159,7 +159,7 @@ def filmsInRange_and_Rating(rating, yearOne, yearTwo, titleList, genreList, runT
             rating.append(ratingList[x])
             studio.append(studioList[x])
             year.append(yearList[x])
-    print(genre[0]})
+    print(genre[0])
     print(title[0])
     print(runtime[0])
     print(rating[0])
@@ -174,7 +174,12 @@ def film_by_Title(titleName, titleList, genreList, runTimeList, ratingList, stud
     for i in range(len(titleList)):
         if (titleName == titleList[i]):
             break
-    print(f"{titleList[i]},{genreList[i]},{runTimeList[i]},{ratingList[i]},{studioList[i]},{yearList[i]}")
+    print(titleList[i])
+    print(genreList[i])
+    print(runTimeList[i])
+    print(ratingList[i])
+    print(studioList[i])
+    print(yearList[i])
     return
 
 def averageRuntime_by_Rating(ratingChoice, ratingList, runTimeList):
